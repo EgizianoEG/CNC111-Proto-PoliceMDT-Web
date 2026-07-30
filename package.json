@@ -1,0 +1,12 @@
+{
+  "name": "cnc111-police-web-mdt",
+  "version": "1.0.0",
+  "description": "CNC111 Network and Web Programming course final project. HTML, CSS, JavaScript, AJAX, and database involvement.",
+  "license": "MIT",
+  "author": "",
+  "type": "commonjs",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  }
+}

@@ -1,0 +1,4 @@
+# Ignore package.json (seperation lines)
+package.json
+[Bb]uild/**/*
+node_modules/**/*
