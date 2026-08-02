@@ -1,0 +1,83 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="San Diego Police Department Mobile Data Terminal (MDT) Demo"
+    />
+    <meta name="robots" content="noindex, nofollow" />
+
+    <link rel="manifest" href="../../../assets/data/site.webmanifest" />
+    <link rel="icon" href="../../../assets/images/favicon/favicon.ico" sizes="any" />
+
+    <title>SDPD &mdash; MDT Dashboard</title>
+    <link rel="stylesheet" type="text/css" href="../../../assets/styles/base.css" />
+    <link rel="stylesheet" type="text/css" href="../../../assets/styles/dashboard.css" />
+  </head>
+  <body>
+    <div class="mdt-shell">
+      <header class="topbar prevent-select">
+        <div class="topbar__brand">
+          <div class="badge-icon badge-icon--sm" aria-hidden="true">
+            <img
+              class="badge-icon__img"
+              src="../../../assets/images/sdpd-logo.png"
+              alt="SDPD Logo"
+            />
+          </div>
+          <span class="topbar__title">SDPD &mdash; MDT</span>
+        </div>
+
+        <div class="topbar__status">
+          <span class="topbar__officer">Officer J. Ramirez &middot; #44710</span>
+          <span class="topbar__shift">On Duty</span>
+          <a href="../authentication/login.html" class="btn btn--ghost">Log Out</a>
+        </div>
+      </header>
+
+      <div class="mdt-body">
+        <nav class="sidebar" aria-label="MDT sections">
+          <ul class="sidebar__list">
+            <li>
+              <a href="../dashboard/dashboard.html" class="sidebar__link sidebar__link--active"
+                >Dashboard</a
+              >
+            </li>
+            <li><a href="../lookup/lookup.html" class="sidebar__link">Lookup</a></li>
+            <li><a href="../citations/citations.html" class="sidebar__link">Citations</a></li>
+            <li><a href="../incidents/incidents.html" class="sidebar__link">Incidents</a></li>
+            <li><a href="../roster/roster.html" class="sidebar__link">Roster</a></li>
+          </ul>
+        </nav>
+
+        <main class="content">
+          <section class="welcome">
+            <h1>Welcome, Officer Joe Ramirez</h1>
+            <p class="welcome__subtitle">Here's what's happening on your shift.</p>
+          </section>
+
+          <section class="stats" aria-label="Quick stats">
+            <div class="stat-card">
+              <span class="stat-card__value">12</span>
+              <span class="stat-card__label">Citations Filed</span>
+            </div>
+            <div class="stat-card">
+              <span class="stat-card__value">3</span>
+              <span class="stat-card__label">Open Incidents</span>
+            </div>
+            <div class="stat-card">
+              <span class="stat-card__value">27</span>
+              <span class="stat-card__label">Officers On Duty</span>
+            </div>
+            <div class="stat-card">
+              <span class="stat-card__value">5</span>
+              <span class="stat-card__label">Pending Lookups</span>
+            </div>
+          </section>
+        </main>
+      </div>
+    </div>
+  </body>
+</html>
