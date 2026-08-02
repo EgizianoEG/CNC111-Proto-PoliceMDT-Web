@@ -1,0 +1,58 @@
+/* Some global styles, applicable to all pages */
+/* And some variables to begin with... */
+:root {
+  --color-navy: #0b1f3a;
+  --color-navy-light: #123259;
+  --color-gold: #c8a24a;
+  --color-gold-light: #e6bc62;
+  --color-bg: #f4f6f8;
+  --color-text: #1c2530;
+  --color-text-muted: #5b6672;
+  --color-text-muted-light: #8a9ba8;
+  --color-border: #d7dce2;
+  --color-danger: #b3261e;
+
+  --font-base: "Segoe UI", Roboto, Arial, sans-serif;
+  --font-heading: "Segoe UI Semibold", "Segoe UI", Arial, sans-serif;
+
+  --radius-sm: 0.4em;
+  --radius-md: 0.6em;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: var(--font-base);
+  color: var(--color-text);
+  background-color: var(--color-bg);
+}
+
+h1,
+h2,
+h3 {
+  font-family: var(--font-heading);
+  margin: 0;
+}
+
+.btn {
+  display: inline-block;
+  padding: 0.85em 1.5em;
+  border-radius: var(--radius-md);
+  border: none;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.15s ease-in-out;
+}
+
+.btn--primary {
+  background-color: var(--color-navy);
+  color: #fff;
+}
+
+.btn--primary:hover {
+  background-color: var(--color-navy-light);
+}
