@@ -1,0 +1,101 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="San Diego Police Department Mobile Data Terminal (MDT) Demo"
+    />
+    <meta name="robots" content="noindex, nofollow" />
+
+    <link rel="manifest" href="../../../assets/data/site.webmanifest" />
+    <link rel="icon" href="../../../assets/images/favicon/favicon.ico" sizes="any" />
+
+    <title>SDPD &mdash; Lookup</title>
+    <link rel="stylesheet" type="text/css" href="../../../assets/styles/base.css" />
+    <link rel="stylesheet" type="text/css" href="../../../assets/styles/shell.css" />
+    <link rel="stylesheet" type="text/css" href="../../../assets/styles/lookup.css" />
+  </head>
+  <body>
+    <div class="mdt-shell">
+      <header class="topbar prevent-select">
+        <div class="topbar__brand">
+          <div class="badge-icon badge-icon--sm" aria-hidden="true">
+            <img
+              class="badge-icon__img"
+              src="../../../assets/images/sdpd-logo.png"
+              alt="SDPD Logo"
+            />
+          </div>
+          <span class="topbar__title">SDPD &mdash; MDT</span>
+        </div>
+
+        <div class="topbar__status">
+          <span class="topbar__officer">Officer J. Ramirez &middot; #44710</span>
+          <span class="topbar__shift">On Duty</span>
+          <a href="../authentication/login.html" class="btn btn--ghost">Log Out</a>
+        </div>
+      </header>
+
+      <div class="mdt-body">
+        <nav class="sidebar" aria-label="MDT Sections">
+          <ul class="sidebar__list">
+            <li><a href="../dashboard/dashboard.html" class="sidebar__link">Dashboard</a></li>
+            <li><a href="./lookup.html" class="sidebar__link sidebar__link--active">Lookup</a></li>
+            <li><a href="../citations/citations.html" class="sidebar__link">Citations</a></li>
+            <li><a href="../incidents/incidents.html" class="sidebar__link">Incidents</a></li>
+            <li><a href="../roster/roster.html" class="sidebar__link">Roster</a></li>
+          </ul>
+        </nav>
+
+        <main class="content">
+          <section class="page-heading">
+            <h1>Lookup</h1>
+            <p class="page-heading__subtitle">
+              Search department records by category. Choose a record type, enter a name, plate, or
+              ID number, then press search.
+            </p>
+          </section>
+
+          <section class="lookup-panel" aria-label="Record Search">
+            <form id="lookup-form" class="lookup-form" method="GET">
+              <div class="form-field form-field--select">
+                <label for="lookup-type">Record type</label>
+                <select id="lookup-type" name="lookup-type">
+                  <option value="individuals">Individuals</option>
+                  <option value="plates">Plates</option>
+                  <option value="arrests">Arrests</option>
+                  <option value="citations">Citations</option>
+                  <option value="reports">Reports</option>
+                </select>
+              </div>
+
+              <div class="form-field form-field--query">
+                <label for="lookup-query">Search term</label>
+                <input
+                  type="text"
+                  id="lookup-query"
+                  name="lookup-query"
+                  placeholder="Enter a name, plate, or ID number"
+                  required
+                  autofocus
+                  autocomplete="off"
+                  autocapitalize="off"
+                  autocorrect="off"
+                />
+              </div>
+
+              <button type="submit" id="lookup-button" class="btn btn--primary">Search</button>
+            </form>
+          </section>
+
+          <!-- Results table goes here after search is submitted... -->
+          <section class="lookup-results" aria-label="Search Results">
+            <!-- <p class="lookup-results__notice">No results to display.</p> -->
+          </section>
+        </main>
+      </div>
+    </div>
+  </body>
+</html>
