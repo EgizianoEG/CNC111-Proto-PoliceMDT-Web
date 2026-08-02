@@ -1,0 +1,65 @@
+.page-heading {
+  margin-bottom: 1.5em;
+}
+
+.page-heading h1 {
+  font-size: 1.5rem;
+}
+
+.page-heading__subtitle {
+  color: var(--color-text-muted);
+  margin-top: 0.3em;
+}
+
+.roster-table {
+  width: 100%;
+  border-collapse: collapse;
+  background-color: #fff;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  overflow: hidden;
+}
+
+.roster-table th,
+.roster-table td {
+  text-align: left;
+  padding: 0.75em 1em;
+  border-bottom: 1px solid var(--color-border);
+  font-size: 0.9rem;
+}
+
+.roster-table th {
+  background-color: var(--color-bg);
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: var(--color-text-muted);
+}
+
+.roster-table tbody tr:last-child td {
+  border-bottom: none;
+}
+
+.status-dot {
+  float: left;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  margin: 0.35em 0.5em 0 0;
+}
+
+.status-dot--on {
+  background-color: #2e7d32;
+}
+
+.status-dot--off {
+  background-color: #9aa3ad;
+}
+
+@media (max-width: 700px) {
+  .roster-table {
+    display: block;
+    overflow-x: auto;
+    white-space: nowrap;
+  }
+}
