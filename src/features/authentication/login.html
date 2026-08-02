@@ -1,6 +1,7 @@
 <!doctype html>
 <html lang="en">
   <head>
+    <!-- Metadata -->
     <meta charset="utf-8" />
     <meta name="keywords" content="San Diego Police Department, Mobile Data Terminal, MDT, Demo" />
     <meta name="robots" content="noindex, nofollow" />
@@ -12,29 +13,8 @@
 
     <!-- Title & favicon -->
     <title>SDPD &mdash; MDT Login</title>
-    <link rel="manifest" href="./assets/data/site.webmanifest" />
-    <link rel="icon" href="./assets/images/favicon/favicon.ico" sizes="any" />
-
-    <link
-      rel="apple-touch-icon"
-      sizes="180x180"
-      href="./assets/images/favicon/apple-touch-icon.png"
-    />
-
-    <link
-      rel="icon"
-      type="image/png"
-      sizes="32x32"
-      href="./assets/images/favicon/favicon-32x32.png"
-    />
-
-    <link
-      rel="icon"
-      type="image/png"
-      sizes="16x16"
-      href="./assets/images/favicon/favicon-16x16.png"
-    />
-    <!-- End Favicon -->
+    <link rel="manifest" href="../../../assets/data/site.webmanifest" />
+    <link rel="icon" href="../../../assets/images/favicon/favicon.ico" sizes="any" />
 
     <!-- Styles -->
     <link rel="stylesheet" href="../../../assets/styles/base.css" />
@@ -46,8 +26,7 @@
   </head>
   <body>
     <main class="login-screen">
-      <div class="brand-bar-top"></div>
-
+      <!-- Left/upper branding/title panel -->
       <div class="brand-panel prevent-select">
         <div class="brand-panel__content">
           <div class="badge-icon">
@@ -62,6 +41,7 @@
         </div>
       </div>
 
+      <!-- The card panel for login; username and password -->
       <div class="login-panel">
         <div class="login-card prevent-select">
           <h2 class="login-card__heading">MDT Login</h2>
@@ -115,14 +95,15 @@
           </form>
         </div>
 
-        <div class="login-footer">
+        <!-- disclaimer footer -->
+        <footer class="login-footer">
           <p>SDPD &ndash; MDT v0.1</p>
           <p class="login-footer__disclaimer">
             <span class="login-footer__disclaimer-label">Disclaimer:</span> This is a fictional
             roleplay system created for academic purposes. Not affiliated with or representing the
             real San Diego Police Department.
           </p>
-        </div>
+        </footer>
       </div>
     </main>
   </body>
