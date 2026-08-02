@@ -8,9 +8,10 @@
   --color-bg: #f4f6f8;
   --color-text: #1c2530;
   --color-text-muted: #5b6672;
-  --color-text-muted-light: #8a9ba8;
+  --color-text-muted-light: #93a9b9;
   --color-border: #d7dce2;
   --color-danger: #b3261e;
+  --color-green: #4caf50;
 
   --font-base: "Segoe UI", Roboto, Arial, sans-serif;
   --font-heading: "Segoe UI Semibold", "Segoe UI", Arial, sans-serif;
@@ -23,6 +24,19 @@
   box-sizing: border-box;
 }
 
+/* Special text selection colors */
+/* Code for Firefox */
+::selection {
+  background: #ffd6a5; /* Peach */
+  color: #3d2b1f; /* Dark brown */
+}
+
+::-moz-selection {
+  background: #ffd6a5;
+  color: #3d2b1f;
+}
+
+/* Prevent text selection for some elements; where absolutely unnecessary */
 .prevent-select {
   -webkit-user-select: none; /* Safari */
   -ms-user-select: none; /* IE 10 and IE 11 */
@@ -57,6 +71,7 @@ h3 {
 .btn--primary {
   background-color: var(--color-navy);
   color: #fff;
+  transition: background-color 0.15s ease-in-out;
 }
 
 .btn--primary:hover {
