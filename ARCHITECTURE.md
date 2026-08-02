@@ -8,22 +8,24 @@ A fictional police Mobile Data Terminal (MDT) web app, themed around the San Die
 
 ## Page model: multi page app
 
-The site is built as a plain multi page app. Every screen is its own HTML file, not a single page that swaps views with JavaScript. This keeps the project close to what the course expects, and it maps cleanly onto server side pages once ASP.NET, NodeJS, or another backend technology is added in phase two *(TODO)*.
+The site is built as a plain multi page app. Every screen is its own HTML file, not a single page that swaps views with JavaScript. The root `src/index.html` file simply redirects into the login page, which keeps the project close to what the course expects and maps cleanly onto server side pages once ASP.NET, NodeJS, or another backend technology is added in phase two *(TODO)*.
 
-Each page loads three kinds of files:
+Each page loads up to three kinds of files:
 
 1. `base.css`, which holds shared colors, fonts, and small reusable components like buttons
 2. its own page specific CSS file
-3. its own page specific JavaScript file, once that page needs one
+3. its own page specific JavaScript file, when that page needs one
 
 ```mermaid
 flowchart LR
-    A[login.html] --> B[dashboard.html]
-    B --> C[lookup.html]
-    B --> D[citations.html]
-    B --> E[incidents.html]
-    B --> F[roster.html]
-    B -.future.-> G[admin manage officers]
+    A[index.html] --> B[login.html]
+    B --> C[dashboard.html]
+    C --> D[lookup.html]
+    C --> E[citations.html]
+    C --> F[incidents.html]
+    C --> G[arrests.html]
+    C --> H[roster.html]
+    C -.future.-> I[admin manage officers]
 ```
 
 Login is the only page without the shared navigation shell. Every other page shows the same top bar and sidebar, so a user always knows where they are.
@@ -46,22 +48,33 @@ flowchart TB
 ```mathematica
 project-root/
   assets/
-    data/            site manifest and any static data files
-    fonts/
-    images/
-    scripts/          shared JavaScript
-    styles/            base.css, shell.css, and one CSS file per page
+        data/            site manifest and any static data files
+        fonts/
+        images/
+            favicon/
+        scripts/          shared JavaScript
+        styles/           base.css, shell.css, and one CSS file per page
   src/
-    features/
-      authentication/   login.html
-      dashboard/         dashboard.html
-      lookup/             lookup.html
-      citations/           citations.html, citations.js
-      incidents/           incidents.html, incidents.js
-      roster/               roster.html
+        index.html
+        login/
+            login.html
+            login.js
+        dashboard/
+            dashboard.html
+            dashboard.js
+        lookup/
+            lookup.html
+        citations/
+            citations.html
+        incidents/
+            incidents.html
+        arrests/
+            arrests.html
+        roster/
+            roster.html
 ```
 
-Assets are grouped by type in `assets/`, since a grader or a new contributor can open that folder and see every stylesheet or script at once. Pages are grouped by feature in `src/features/`, since each feature will eventually need its own server side logic and database queries in phase two, and keeping the related files close together makes that easier.
+Assets are grouped by type in `assets/`, since a grader or a new contributor can open that folder and see every stylesheet or script at once. Pages are grouped by feature directly under `src/`, since each feature will eventually need its own server side logic and database queries in phase two, and keeping the related files close together makes that easier.
 
 ## Request flow, phase two
 
@@ -81,7 +94,7 @@ sequenceDiagram
     Note over Browser,Server: Lookup, citations, and incidents also use AJAX for live search and form submission without a full page reload.
 ```
 
-## Data model, planned (phase two)
+## Data model, planned/expected (phase two)
 
 The database is small on purpose. Four tables cover everything the rubric asks for and everything the app needs to feel real.
 
@@ -89,6 +102,7 @@ The database is small on purpose. Four tables cover everything the rubric asks f
 erDiagram
     OFFICERS ||--o{ CITATIONS : files
     OFFICERS ||--o{ INCIDENTS : files
+    OFFICERS ||--o{ ARRESTS : files
     OFFICERS {
         int id
         string badge_number
@@ -113,6 +127,13 @@ erDiagram
         string type
         string description
         date reported_on
+    }
+    ARRESTS {
+        int id
+        int officer_id
+        string subject_name
+        string charge
+        date arrested_on
     }
 ```
 
