@@ -1,34 +1,129 @@
 <!doctype html>
 <html lang="en">
   <head>
-    <meta charset="UTF-8" />
+    <meta charset="utf-8" />
+    <meta name="keywords" content="San Diego Police Department, Mobile Data Terminal, MDT, Demo" />
+    <meta name="robots" content="noindex, nofollow" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta
       name="description"
       content="San Diego Police Department Mobile Data Terminal (MDT) Demo"
     />
-    <meta name="keywords" content="San Diego Police Department, Mobile Data Terminal, MDT, Demo" />
-    <meta name="robots" content="noindex, nofollow" />
 
+    <!-- Title & favicon -->
+    <title>SDPD &mdash; MDT Login</title>
     <link rel="manifest" href="./assets/data/site.webmanifest" />
     <link rel="icon" href="./assets/images/favicon/favicon.ico" sizes="any" />
 
-    <title>SDPD &mdash; MDT Login</title>
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="./assets/images/favicon/apple-touch-icon.png"
+    />
+
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./assets/images/favicon/favicon-32x32.png"
+    />
+
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="./assets/images/favicon/favicon-16x16.png"
+    />
+    <!-- End Favicon -->
+
+    <!-- Styles -->
+    <link rel="stylesheet" href="../../../assets/styles/base.css" />
     <link rel="stylesheet" href="../../../assets/styles/login.css" />
+
+    <!-- Scripts -->
+    <script src="../../../assets/scripts/base.js" defer></script>
+    <script src="login.js" defer></script>
   </head>
   <body>
-    <div class="login-container">
-      <h1>San Diego Police Department</h1>
-      <h2>Mobile Data Terminal (MDT) &mdash; Log In</h2>
-      <form id="login-form" action="/login" method="POST">
-        <label for="username">Username:</label>
-        <input type="text" id="username" name="username" required autofocus />
+    <main class="login-screen">
+      <div class="brand-bar-top"></div>
 
-        <label for="password">Password:</label>
-        <input type="password" id="password" name="password" required />
+      <div class="brand-panel prevent-select">
+        <div class="brand-panel__content">
+          <div class="badge-icon">
+            <img
+              class="badge-icon__img"
+              src="../../../assets/images/sdpd-logo.png"
+              alt="San Diego Police Department Badge"
+            />
+          </div>
+          <h1 class="brand-panel__title">San Diego Police Department</h1>
+          <p class="brand-panel__subtitle">Mobile Data Terminal</p>
+        </div>
+      </div>
 
-        <button type="submit" id="login-button">Login</button>
-      </form>
-    </div>
+      <div class="login-panel">
+        <div class="login-card prevent-select">
+          <h2 class="login-card__heading">MDT Login</h2>
+          <p class="login-card__notice">Authorized Personnel Only</p>
+
+          <form
+            id="login-form"
+            class="login-form"
+            action="../dashboard/dashboard.html"
+            method="GET"
+          >
+            <div class="form-field">
+              <label for="username">Badge / Username</label>
+              <input
+                type="text"
+                id="username"
+                name="username"
+                placeholder="Enter badge number or username"
+                title="Hint: use 'TA_DEMO_2026'"
+                autocomplete="username"
+                autocapitalize="off"
+                autocorrect="off"
+                spellcheck="false"
+                minlength="6"
+                maxlength="32"
+                required
+                autofocus
+              />
+            </div>
+
+            <div class="form-field">
+              <label for="password">Password</label>
+              <input
+                type="password"
+                id="password"
+                name="password"
+                minlength="8"
+                maxlength="32"
+                placeholder="Enter password"
+                autocomplete="current-password"
+                autocapitalize="off"
+                autocorrect="off"
+                spellcheck="false"
+                required
+              />
+            </div>
+
+            <button type="submit" id="login-button" class="btn btn--primary">
+              Access Terminal
+            </button>
+          </form>
+        </div>
+
+        <div class="login-footer">
+          <p>SDPD &ndash; MDT v0.1</p>
+          <p class="login-footer__disclaimer">
+            <span class="login-footer__disclaimer-label">Disclaimer:</span> This is a fictional
+            roleplay system created for academic purposes. Not affiliated with or representing the
+            real San Diego Police Department.
+          </p>
+        </div>
+      </div>
+    </main>
   </body>
 </html>
