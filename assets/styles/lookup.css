@@ -67,6 +67,18 @@
   padding: 1em 1em;
 }
 
+.form-field--database {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  column-gap: 0.5em;
+  row-gap: 0.25em;
+}
+
+.form-field--database label {
+  margin: 0;
+  color: var(--color-text-muted);
+}
+
 /* Stack on narrow viewports */
 @media (max-width: 700px) {
   .lookup-form {
