@@ -5,6 +5,15 @@
 .welcome__subtitle {
   color: var(--color-text-muted);
   margin-top: 0.3em;
+  margin-bottom: 3.25em;
+}
+
+.photograph__img {
+  width: 80px;
+  height: 80px;
+  border-radius: 5%;
+  float: inline-start;
+  margin-right: 1em;
 }
 
 .stats {
