@@ -5,7 +5,7 @@ This document lists the conventions followed across the project. The goal is tha
 ## General
 
 - Files and folders use kebab case, for example `login.html` and `manage-officers.html`.
-- Every feature gets its own folder under `src/features/`.
+- Every feature gets its own folder directly under `src/`.
 - Every page has a matching CSS file under `assets/styles/` with the same base name, for example `citations.html` pairs with `citations.css`.
 - Formatting is handled by Prettier and linting by ESLint. Run the formatter and linter before committing rather than relying on manual review.
 - Commits should be small and describe one change, for example "add citations form markup" rather than one large commit at the end of a session.
