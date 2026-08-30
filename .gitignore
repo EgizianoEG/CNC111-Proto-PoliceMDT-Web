@@ -54,6 +54,8 @@ Thumbs.db
 *.zip
 
 # track these files, if they exist
+!assets/data/*.sql
+!.htaccess
 !.dockerignore
 !.editorconfig
 !.env.example
