@@ -14,7 +14,7 @@ This is a proof of concept, not a finished product. The goal was to demonstrate 
 
 ## Database
 
-Four tables ended up implemented instead of the full seven originally sketched in the Phase I architecture document: `officers`, `individuals`, `citations`, `incidents`, plus `bolos`, added during Phase II. Each has real foreign keys, indexes, and was seeded with fictional demo data through `database/schema.sql` and `database/seed.sql`.
+Four tables ended up implemented instead of the full seven originally sketched in the Phase I architecture document: `officers`, `individuals`, `citations`, `incidents`, plus `bolos`, added during Phase II. Each has real foreign keys, indexes, and was seeded with fictional demo data through `assets/data/schema.sql` and `assets/data/seed.sql`.
 
 `arrests` and its related junction tables (`arrest_charges`, `incident_parties`, `incident_officers`) were designed in the original ERD (Entity-Relationship Diagram) but not implemented. Adding them would mean one more table, one more junction table, and one more full page following the same pattern already used for citations, incidents, and BOLOs. The pattern is proven, it just was not built out a third and fourth time in the time available.
 

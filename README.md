@@ -20,7 +20,7 @@ Phase two. The front end is wired to a real PHP and MySQL backend: login, sessio
 
 ## Setup
 
-Needs XAMPP (or an equivalent Apache + PHP + MySQL stack) running locally. Create a database, then import `database/schema.sql` followed by `database/seed.sql` through phpMyAdmin.
+Needs XAMPP (or an equivalent Apache + PHP + MySQL stack) running locally. Create a database, then import `assets/data/schema.sql` followed by `assets/data/seed.sql` through phpMyAdmin.
 
 ## Docs
 
