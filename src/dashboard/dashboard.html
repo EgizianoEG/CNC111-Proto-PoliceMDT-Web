@@ -7,7 +7,6 @@
       name="description"
       content="San Diego Police Department Mobile Data Terminal (MDT) Demo"
     />
-    <meta name="robots" content="noindex, nofollow" />
 
     <link rel="manifest" href="../../assets/data/site.webmanifest" />
     <link rel="icon" href="../../assets/images/favicon/favicon.ico" sizes="any" />
@@ -16,6 +15,8 @@
     <link rel="stylesheet" type="text/css" href="../../assets/styles/base.css" />
     <link rel="stylesheet" type="text/css" href="../../assets/styles/shell.css" />
     <link rel="stylesheet" type="text/css" href="../../assets/styles/dashboard.css" />
+    <script type="module" src="../../assets/scripts/main.js" defer></script>
+    <script type="module" src="dashboard.js"></script>
   </head>
   <body>
     <div class="mdt-shell">
@@ -28,9 +29,9 @@
         </div>
 
         <div class="topbar__status">
-          <span class="topbar__officer">Officer J. Ramirez &middot; #44710</span>
-          <span class="topbar__shift">On Duty</span>
-          <a href="../login/login.html" class="btn btn--ghost">Log Out</a>
+          <span class="topbar__officer"></span>
+          <span class="topbar__shift"></span>
+          <a href="#" class="btn btn--ghost">Log Out</a>
         </div>
       </header>
 
@@ -45,7 +46,9 @@
             <li><a href="../lookup/lookup.html" class="sidebar__link">Lookup</a></li>
             <li><a href="../citations/citations.html" class="sidebar__link">Citations</a></li>
             <li><a href="../incidents/incidents.html" class="sidebar__link">Incidents</a></li>
-            <li><a href="../arrests/arrests.html" class="sidebar__link">Arrests</a></li>
+            <li>
+              <span class="sidebar__link" style="cursor: default">Arrests</span>
+            </li>
             <li><a href="../roster/roster.html" class="sidebar__link">Roster</a></li>
           </ul>
         </nav>
@@ -59,21 +62,37 @@
 
           <section class="stats" aria-label="Quick stats">
             <div class="stat-card">
-              <span class="stat-card__value">12</span>
+              <span class="stat-card__value" data-stat="citations-filed">-</span>
               <span class="stat-card__label">Citations Filed</span>
             </div>
             <div class="stat-card">
-              <span class="stat-card__value">3</span>
+              <span class="stat-card__value" data-stat="open-incidents">-</span>
               <span class="stat-card__label">Open Incidents</span>
             </div>
             <div class="stat-card">
-              <span class="stat-card__value">27</span>
+              <span class="stat-card__value" data-stat="officers-on-duty">-</span>
               <span class="stat-card__label">Officers On Duty</span>
             </div>
-            <div class="stat-card">
-              <span class="stat-card__value">5</span>
-              <span class="stat-card__label">Pending Lookups</span>
-            </div>
+          </section>
+
+          <section class="bolos" aria-label="Active BOLOs">
+            <h2 class="section__title">Active BOLOs</h2>
+            <table id="active-bolos" class="table data-table">
+              <thead class="data-table__head">
+                <tr>
+                  <th scope="col">Subject / Vehicle</th>
+                  <th scope="col">Plate</th>
+                  <th scope="col">Reason</th>
+                  <th scope="col">Priority</th>
+                  <th scope="col">Issued</th>
+                </tr>
+              </thead>
+              <tbody id="active-bolos-body" class="data-table__body">
+                <tr>
+                  <td colspan="5">Loading active BOLOs&hellip;</td>
+                </tr>
+              </tbody>
+            </table>
           </section>
         </main>
       </div>

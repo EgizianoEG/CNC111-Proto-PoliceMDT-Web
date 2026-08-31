@@ -1,19 +1,34 @@
+.welcome {
+  display: grid;
+  grid-template-columns: 100px minmax(0, 1fr);
+  column-gap: 1em;
+  align-items: center;
+}
+
 .welcome h1 {
+  grid-column: 2;
+  margin: 0;
   font-size: 1.5rem;
+  line-height: 1.25;
 }
 
 .welcome__subtitle {
+  grid-column: 2;
+  margin: -2em 0 0;
   color: var(--color-text-muted);
-  margin-top: 0.3em;
-  margin-bottom: 3.25em;
 }
 
 .photograph__img {
-  width: 80px;
-  height: 80px;
-  border-radius: 5%;
-  float: inline-start;
-  margin-right: 1em;
+  grid-column: 1;
+  grid-row: 1 / span 2;
+
+  width: 100px;
+  height: 100px;
+  max-width: 100%;
+  object-fit: cover;
+
+  border-radius: 20%;
+  margin: 0;
 }
 
 .stats {
@@ -44,4 +59,8 @@
   margin-top: 0.3em;
   font-size: 0.8rem;
   color: var(--color-text-muted);
+}
+
+.bolos {
+  margin-top: 2em;
 }
