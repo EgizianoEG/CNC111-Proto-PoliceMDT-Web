@@ -30,7 +30,7 @@ This document lists the conventions followed across the project. The goal is tha
 - Selectors should mix element, class, id, and combinator selectors naturally rather than using only one kind everywhere. A combinator like `.form-field input` is preferred over adding a new class to every single input.
 - Avoid `!important`. If a style is not applying, the fix is almost always a more specific selector, not a forced override.
 - One responsive breakpoint is used across the project, `max-width: 700px`, so behavior stays predictable. Only add a second breakpoint if a specific page genuinely needs it, and explain why in a comment.
-- ~~Floats are used deliberately in places like the dashboard sidebar layout, and any floated element must have a matching clearfix or an `overflow` rule on its parent so the layout does not break.~~
+- Floats are used deliberately in places like the dashboard sidebar layout, and any floated element must have a matching clearfix or an `overflow` rule on its parent so the layout does not break.
 
 ## JavaScript, phase two
 
