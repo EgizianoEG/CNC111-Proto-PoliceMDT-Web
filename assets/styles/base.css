@@ -90,6 +90,9 @@ h3 {
   background: #fff;
   color: var(--color-text);
   font-size: 0.9rem;
+
+  overflow-x: auto;
+  overflow-y: hidden;
 }
 
 /* Header */
@@ -130,6 +133,16 @@ h3 {
 .data-table__body td:first-child {
   color: var(--color-navy);
   font-weight: 600;
+}
+
+.form-error {
+  margin: 0;
+  padding: 0.7em 0.9em;
+  background-color: #fdecea;
+  border: 1px solid var(--color-danger);
+  color: var(--color-danger);
+  border-radius: var(--radius-sm);
+  font-size: 0.85rem;
 }
 
 /* Mobile overflow */
