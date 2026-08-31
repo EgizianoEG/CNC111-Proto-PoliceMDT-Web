@@ -50,38 +50,28 @@ async function loadActiveBolos() {
     tbody.innerHTML = "";
     bolos.forEach((bolo) => {
       const row = tbody.insertRow();
-      const idCell = row.insertCell(0);
-      const descCell = row.insertCell(1);
-      const vehPlateCell = row.insertCell(2);
-      const priorityCell = row.insertCell(3);
-      const dateIssuedCell = row.insertCell(4);
-      // const lastSeenCell = row.insertCell(3);
 
-      const priority = bolo.priority || "normal";
+      const idCell = row.insertCell(0);
+      const vehPlateCell = row.insertCell(1);
+      const subjectVehCell = row.insertCell(2);
+      const reasonCell = row.insertCell(3);
+      const priorityCell = row.insertCell(4);
+      const dateIssuedCell = row.insertCell(5);
+
       const yearSuffix = new Date().getFullYear() % 100;
       const boloId = `${yearSuffix}-${bolo.id.toString().padStart(4, "0")}`;
+      const priority = bolo.priority || "normal";
       const issued = new Date(bolo.issuedOn).toLocaleDateString();
       const issuedRelative = issuedRelativeTime(new Date(bolo.issuedOn));
-
-      const plate = bolo.plateNumber || "—";
-      const isVehBolo = bolo.plateNumber !== null;
-      const isPersonBolo = bolo.subjectName !== null;
-      const vehDescription = bolo.vehicleDescription ? `${bolo.vehicleDescription}` : "N/A";
-
-      let description = `${isVehBolo ? `Vehicle: ${vehDescription}; ` : ""}${
-        isPersonBolo ? `Person: ${bolo.subjectName}` : ""
-      }${bolo.reason}`.trim();
-
-      if (!isVehBolo && !isPersonBolo) {
-        description = `Unknown subject, ${bolo.reason}`;
-      }
+      const subjVehDescription =
+        `${bolo.subjectName || ""}${bolo.vehicleDescription ? ` (${bolo.vehicleDescription})` : ""}`.trim();
 
       idCell.textContent = boloId;
-      descCell.textContent = escapeHtml(description);
-      vehPlateCell.textContent = escapeHtml(plate);
+      vehPlateCell.textContent = escapeHtml(bolo.plateNumber || "—");
+      subjectVehCell.textContent = subjVehDescription;
+      reasonCell.textContent = escapeHtml(bolo.reason || "—");
       priorityCell.textContent = priority;
       dateIssuedCell.textContent = `${issued} (${issuedRelative})`;
-      // lastSeenCell.textContent = bolo.lastSeen ? new Date(bolo.lastSeen).toLocaleString() : "—";
 
       // @todo: Add click event to go to bolo details page when implemented
       // row.addEventListener("click", () => {
