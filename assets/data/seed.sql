@@ -19,7 +19,7 @@ VALUES
         'Officer',
         'officer',
         'Patrol',
-        'https://placehold.co/280',
+        'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQLLEyFOnN63nbOdnFLVQUXjtnxh8Y0vGru6wSieswCPcpQFGd_9coOnRM3&s=10',
         'jramirez',
         
         -- password_hash('password123', PASSWORD_DEFAULT), cost = 10
@@ -33,8 +33,10 @@ VALUES
         'Sergeant',
         'officer',
         'Traffic',
-        'https://placehold.co/280',
+        'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSneuARoTq_9MlvOiJ20JjJ9SV7JmoFijIsGB9eygptFBpI6noMvyjqX2E&s=10',
         'kdelgado',
+
+        -- password_hash('securepass456', PASSWORD_DEFAULT), cost = 10
         '$2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llCk5h9Qp8s6t7Y8Qk1aC',
         'on_duty',
         '2026-08-30 12:15:00'
@@ -57,7 +59,7 @@ VALUES
         'Officer',
         'officer',
         'Patrol',
-        'https://placehold.co/280',
+        'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSAAHDI3VFnY0JNQr9TP4Cl9wjPPXtUCF6qUF0_j14QtUiBGLFyWgsUEseH&s=10',
         'rwhitfield',
         '$2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llCk5h9Qp8s6t7Y8Qk1aC',
         'on_duty',
@@ -121,64 +123,64 @@ INSERT INTO individuals
     (full_name, date_of_birth, gender, address, license_number, photo_url)
 VALUES
     ('Marcus Bell', '1994-03-11', 'Male',
-     '118 Harbor View Dr, San Diego, CA', 'D1029384', 'https://placehold.co/280'),
+     '118 Harbor View Dr, San Diego, CA', 'D1029384', 'https://randomuser.me/api/portraits/men/4.jpg'),
 
     ('Elena Vasquez', '1988-07-22', 'Female',
-     '77 Sunset Cliffs Blvd, San Diego, CA', 'D5566778', 'https://placehold.co/280'),
+     '77 Sunset Cliffs Blvd, San Diego, CA', 'D5566778', 'https://randomuser.me/api/portraits/women/36.jpg'),
 
     ('Tyrell Jackson', '2001-01-30', 'Male',
-     '905 Ocean Front St, San Diego, CA', 'D9988112', 'https://placehold.co/280'),
+     '905 Ocean Front St, San Diego, CA', 'D9988112', 'https://randomuser.me/api/portraits/men/25.jpg'),
 
     ('Sophia Carter', '1996-11-05', 'Female',
-     '4312 Adams Ave, San Diego, CA', 'D3147285', 'https://placehold.co/280'),
+     '4312 Adams Ave, San Diego, CA', 'D3147285', 'https://randomuser.me/api/portraits/women/45.jpg'),
 
     ('Daniel Kim', '1985-09-14', 'Male',
-     '1640 Camino Del Rio N, San Diego, CA', 'D4819203', 'https://placehold.co/280'),
+     '1640 Camino Del Rio N, San Diego, CA', 'D4819203', 'https://randomuser.me/api/portraits/men/12.jpg'),
 
     ('Maya Thompson', '1999-04-27', 'Female',
-     '2907 University Ave, San Diego, CA', 'D7291456', 'https://placehold.co/280'),
+     '2907 University Ave, San Diego, CA', 'D7291456', 'https://randomuser.me/api/portraits/women/22.jpg'),
 
     ('Christopher Reed', '1979-12-19', 'Male',
-     '815 Market St, San Diego, CA', 'D2083417', 'https://placehold.co/280'),
+     '815 Market St, San Diego, CA', 'D2083417', 'https://randomuser.me/api/portraits/men/18.jpg'),
 
     ('Isabella Torres', '1992-06-08', 'Female',
-     '3620 Clairemont Mesa Blvd, San Diego, CA', 'D6738142', 'https://placehold.co/280'),
+     '3620 Clairemont Mesa Blvd, San Diego, CA', 'D6738142', 'https://randomuser.me/api/portraits/women/55.jpg'),
 
     ('Nathan Cooper', '2003-02-16', 'Male',
-     '5095 Linda Vista Rd, San Diego, CA', 'D9150274', 'https://placehold.co/280'),
+     '5095 Linda Vista Rd, San Diego, CA', 'D9150274', 'https://randomuser.me/api/portraits/men/30.jpg'),
 
     ('Alicia Morgan', '1987-10-31', 'Female',
-     '1260 4th Ave, San Diego, CA', 'D5372198', 'https://placehold.co/280'),
+     '1260 4th Ave, San Diego, CA', 'D5372198', 'https://randomuser.me/api/portraits/women/15.jpg'),
 
     ('Jordan Price', '1995-01-12', 'Male',
-     '2210 El Cajon Blvd, San Diego, CA', 'D6843105', 'https://placehold.co/280'),
+     '2210 El Cajon Blvd, San Diego, CA', 'D6843105', 'https://randomuser.me/api/portraits/men/42.jpg'),
 
     ('Rebecca Flores', '1990-08-23', 'Female',
-     '8745 Aero Dr, San Diego, CA', 'D4127869', 'https://placehold.co/280'),
+     '8745 Aero Dr, San Diego, CA', 'D4127869', 'https://randomuser.me/api/portraits/women/20.jpg'),
 
     ('Anthony Grant', '1983-05-17', 'Male',
-     '1467 Imperial Ave, San Diego, CA', 'D7901543', 'https://placehold.co/280'),
+     '1467 Imperial Ave, San Diego, CA', 'D7901543', 'https://randomuser.me/api/portraits/men/39.jpg'),
 
     ('Hannah Lee', '1998-12-02', 'Female',
-     '3002 Balboa Ave, San Diego, CA', 'D3518640', 'https://placehold.co/280'),
+     '3002 Balboa Ave, San Diego, CA', 'D3518640', 'https://randomuser.me/api/portraits/women/28.jpg'),
 
     ('Michael Foster', '1976-03-29', 'Male',
-     '6710 Friars Rd, San Diego, CA', 'D6284901', 'https://placehold.co/280'),
+     '6710 Friars Rd, San Diego, CA', 'D6284901', 'https://randomuser.me/api/portraits/men/50.jpg'),
 
     ('Kayla Bennett', '2000-09-07', 'Female',
-     '4188 Mission Blvd, San Diego, CA', 'D8437152', 'https://placehold.co/280'),
+     '4188 Mission Blvd, San Diego, CA', 'D8437152', 'https://randomuser.me/api/portraits/women/35.jpg'),
 
     ('Brandon Scott', '1993-07-18', 'Male',
-     '9525 Clairemont Mesa Blvd, San Diego, CA', 'D2659187', 'https://placehold.co/280'),
+     '9525 Clairemont Mesa Blvd, San Diego, CA', 'D2659187', 'https://randomuser.me/api/portraits/men/45.jpg'),
 
     ('Nicole Hayes', '1989-02-25', 'Female',
-     '5175 College Ave, San Diego, CA', 'D7043816', 'https://placehold.co/280'),
+     '5175 College Ave, San Diego, CA', 'D7043816', 'https://randomuser.me/api/portraits/women/40.jpg'),
 
     ('Eric Wallace', '1981-11-11', 'Male',
-     '2436 30th St, San Diego, CA', 'D5982173', 'https://placehold.co/280'),
+     '2436 30th St, San Diego, CA', 'D5982173', 'https://randomuser.me/api/portraits/men/48.jpg'),
 
     ('Samantha Cruz', '1997-05-03', 'Female',
-     '1090 Grand Ave, San Diego, CA', 'D8362049', 'https://placehold.co/280');
+     '1090 Grand Ave, San Diego, CA', 'D8362049', 'https://randomuser.me/api/portraits/women/43.jpg');
 
 -- ------------------------------------------------------------
 -- BOLOS
