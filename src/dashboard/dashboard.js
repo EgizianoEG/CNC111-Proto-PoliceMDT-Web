@@ -3,6 +3,15 @@ import { API_BASE_URL, requireSession, renderTopbar } from "../../assets/scripts
 document.addEventListener("DOMContentLoaded", async () => {
   const officer = await requireSession();
   if (officer) renderTopbar(officer);
+
+  /** @type {HTMLImageElement} */
+  const officerPortrait = document.getElementById("officer-portrait");
+  console.log(officer, officerPortrait);
+  if (officer && officerPortrait) {
+    console.log(true);
+    officerPortrait.src = officer.photoUrl || "https://placehold.co/80";
+  }
+
   loadStats();
   loadActiveBolos();
 });

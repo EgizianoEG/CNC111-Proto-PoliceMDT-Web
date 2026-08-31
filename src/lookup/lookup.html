@@ -16,6 +16,7 @@
     <link rel="stylesheet" type="text/css" href="../../assets/styles/base.css" />
     <link rel="stylesheet" type="text/css" href="../../assets/styles/shell.css" />
     <link rel="stylesheet" type="text/css" href="../../assets/styles/lookup.css" />
+    <script type="module" src="./lookup.js"></script>
   </head>
   <body>
     <div class="mdt-shell">
@@ -51,21 +52,21 @@
           <section class="page-heading">
             <h1>Lookup</h1>
             <p class="page-heading__subtitle">
-              Search department records by category. Choose a record type, enter a name, plate, or
-              ID number, then press search.
+              Search department records by category. Choose a record type, enter a name, then press
+              search.
             </p>
           </section>
 
           <section class="lookup-panel" aria-label="Record Search">
-            <form id="lookup-form" class="lookup-form" method="GET">
+            <form id="lookup-form" class="lookup-form" novalidate>
               <div class="form-field form-field--select">
                 <label for="lookup-type">Record type</label>
                 <select id="lookup-type" name="lookup-type">
                   <option value="individuals">Individuals</option>
-                  <option value="plates">Plates</option>
-                  <option value="arrests">Arrests</option>
-                  <option value="citations">Citations</option>
-                  <option value="reports">Reports</option>
+                  <option value="incidents">Reports</option>
+                  <option value="vehicles" disabled>Plates (unavailable)</option>
+                  <option value="citations_disabled" disabled>Citations (unavailable)</option>
+                  <option value="arrests_disabled" disabled>Arrests (unavailable)</option>
                 </select>
               </div>
 
@@ -75,8 +76,8 @@
                   type="text"
                   id="lookup-query"
                   name="lookup-query"
-                  placeholder="Enter a name, plate, or ID number"
-                  minlength="3"
+                  placeholder="Enter a name or keyword"
+                  minlength="2"
                   maxlength="64"
                   required
                   autofocus
@@ -89,26 +90,23 @@
               <button type="submit" id="lookup-button" class="btn btn--primary">Search</button>
 
               <div class="form-field form-field--database">
-                <input type="checkbox" id="lookup-fed-database" name="database" value="federal" />
-                <label class="lookup-fed-database__label" for="lookup-fed-database"
-                  >Include federal database</label
-                >
+                <input type="checkbox" id="lookup-fed-database" disabled />
+                <label for="lookup-fed-database">Include federal database</label>
 
-                <input
-                  type="checkbox"
-                  id="lookup-local-database"
-                  name="database"
-                  value="local"
-                  checked
-                />
+                <input type="checkbox" id="lookup-local-database" checked disabled />
                 <label for="lookup-local-database">Include local database</label>
               </div>
             </form>
           </section>
 
-          <!-- Results table goes here after search is submitted... -->
           <section class="lookup-results" aria-label="Search Results">
-            <!-- <p class="lookup-results__notice">No results to display.</p> -->
+            <table id="lookup-results-table" class="data-table" hidden>
+              <thead id="lookup-results-head" class="data-table__heading"></thead>
+              <tbody id="lookup-results-body" class="data-table__body"></tbody>
+            </table>
+            <p id="lookup-results-notice" class="lookup-results__notice">
+              Enter a search term above to look up records.
+            </p>
           </section>
         </main>
       </div>
