@@ -34,7 +34,7 @@ $officer = $stmt->get_result()->fetch_assoc();
 
 if (!$officer || !password_verify($password, $officer['password_hash'])) {
     http_response_code(401);
-    echo json_encode(['success' => false, 'message' => 'Invalid badge number or password.']);
+    echo json_encode(['success' => false, 'message' => 'Invalid username or password.']);
     exit;
 }
 

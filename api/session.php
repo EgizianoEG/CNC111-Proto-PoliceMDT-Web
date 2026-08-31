@@ -9,4 +9,20 @@ if (!isset($_SESSION['officer_id'])) {
     exit;
 }
 
-echo json_encode(['authenticated' => true, 'officerId' => $_SESSION['officer_id']]);
+$stmt = $conn->prepare('SELECT id, name, badge_number, rank, division, photo_url, duty_status FROM officers WHERE id = ?');
+$stmt->bind_param('i', $_SESSION['officer_id']);
+$stmt->execute();
+$officer = $stmt->get_result()->fetch_assoc();
+
+echo json_encode([
+    'authenticated' => true,
+    'officer' => [
+        'id' => (int) $officer['id'],
+        'name' => $officer['name'],
+        'badgeNumber' => $officer['badge_number'],
+        'rank' => $officer['rank'],
+        'division' => $officer['division'],
+        'photoUrl' => $officer['photo_url'],
+        'dutyStatus' => $officer['duty_status'],
+    ],
+]);
