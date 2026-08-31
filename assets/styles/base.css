@@ -77,3 +77,66 @@ h3 {
 .btn--primary:hover {
   background-color: var(--color-navy-light);
 }
+
+/* Data tables base modern styles */
+
+.data-table {
+  margin-top: 1em;
+  width: 100%;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  border-spacing: 0;
+  overflow: hidden;
+  background: #fff;
+  color: var(--color-text);
+  font-size: 0.9rem;
+}
+
+/* Header */
+.data-table__head {
+  background: #f6f8fa;
+  color: var(--color-navy);
+}
+
+.data-table__head th {
+  padding: 0.85rem 1rem;
+  border-bottom: 1px solid var(--color-border);
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  text-align: left;
+  text-transform: uppercase;
+}
+
+/* Body */
+.data-table__body td {
+  padding: 0.95rem 1rem;
+  border-bottom: 1px solid #edf0f2;
+}
+
+.data-table__body tr:last-child td {
+  border-bottom: 0;
+}
+
+.data-table__body tr {
+  transition: background-color 0.15s ease;
+}
+
+.data-table__body tr:hover {
+  background: #f8fbfa;
+}
+
+/* Optional emphasis for the first column */
+.data-table__body td:first-child {
+  color: var(--color-navy);
+  font-weight: 600;
+}
+
+/* Mobile overflow */
+@media (max-width: 700px) {
+  .data-table {
+    display: block;
+    overflow-x: auto;
+    white-space: nowrap;
+  }
+}
