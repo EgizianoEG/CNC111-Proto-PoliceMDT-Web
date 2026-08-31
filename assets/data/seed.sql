@@ -11,7 +11,7 @@ USE sdpd_mdt;
 -- ------------------------------------------------------------
 
 INSERT INTO officers
-    (badge_number, name, rank, role, divsion, photo_url, username, password_hash, duty_status, duty_status_updated_at)
+    (badge_number, name, rank, role, division, photo_url, username, password_hash, duty_status, duty_status_updated_at)
 VALUES
     (
         '4471',
@@ -21,7 +21,9 @@ VALUES
         'Patrol',
         'https://placehold.co/280',
         'jramirez',
-        '$2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llCk5h9Qp8s6t7Y8Qk1aC',
+        
+        -- password_hash('password123', PASSWORD_DEFAULT), cost = 10
+        '$2y$10$Dy9BeiuvthNp96mhyAhzQuEjtVUL/WTK6yPgAtdktPhxf14rYBYEu',
         'on_duty',
         '2026-08-30 13:42:00'
     ),
