@@ -131,7 +131,7 @@ project-root/
 └── README.md
 ```
 
-`citations/` and `arrests/` folders are not present; see `docs/PHASE_II_NOTES.md`. `api/citations.php` exists and works even though the page that would call it doesn't.
+`citations/` and `arrests/` folders are not present; see `PHASE_II_NOTES.md`. `api/citations.php` exists and works even though the page that would call it doesn't.
 
 ## Request flow, as implemented
 
@@ -229,4 +229,4 @@ erDiagram
 
 ### What was planned but not implemented
 
-`ARRESTS`, `ARREST_CHARGES`, `INCIDENT_PARTIES`, and `INCIDENT_OFFICERS` were designed in the original Phase I entity relationship diagram and are not part of the implemented schema. The `role` column on officers is still included from the start, even though the admin page it would support does not exist, for the same reason noted in Phase I: adding it later is a new page, not a schema change. Full reasoning on what's left out and why lives in `docs/PHASE_II_NOTES.md`.
+`ARRESTS`, `ARREST_CHARGES`, `INCIDENT_PARTIES`, and `INCIDENT_OFFICERS` were designed in the original Phase I entity relationship diagram and are not part of the implemented schema. The `role` column on officers is still included from the start, even though the admin page it would support does not exist, for the same reason noted in Phase I: adding it later is a new page, not a schema change. Full reasoning on what's left out and why lives in `PHASE_II_NOTES.md`.

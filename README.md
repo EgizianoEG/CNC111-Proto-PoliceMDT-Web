@@ -6,7 +6,7 @@ Officers log in, look up records, file incident reports and BOLOs, and check who
 
 ## Status
 
-Phase two. The front end is wired to a real PHP and MySQL backend: login, session-based access control, and most pages are fully live. This is a proof of concept demonstrating the course's front end and back end techniques together, not a complete or polished MDT. See `docs/PHASE_II_NOTES.md` for what's implemented versus what's designed but not built.
+Phase two. The front end is wired to a real PHP and MySQL backend: login, session-based access control, and most pages are fully live. This is a proof of concept demonstrating the course's front end and back end techniques together, not a complete or polished MDT. See `PHASE_II_NOTES.md` for what's implemented versus what's designed but not built.
 
 ## Pages so far
 
@@ -24,4 +24,4 @@ Needs XAMPP (or an equivalent Apache + PHP + MySQL stack) running locally. Creat
 
 ## Docs
 
-More detail lives in `docs/ARCHITECTURE.md`, `docs/CODE_STANDARD.md`, and `docs/PHASE_II_NOTES.md`, if you're curious or picking this up later.
+More detail lives in `ARCHITECTURE.md`, `CODE_STANDARD.md`, and `PHASE_II_NOTES.md`, if you're curious or picking this up later.
