@@ -2,20 +2,26 @@
 
 A small, fictional Mobile Data Terminal for a roleplay police department, built as a project for CNC111 (Network and Web Programming) at E-JUST.
 
-Officers can log in, look up records, file citations and incident reports, and check who's on shift. It's not affiliated with the real San Diego Police Department, just borrowing the name and look for a bit of realism.
+Officers log in, look up records, file incident reports and BOLOs, and check who's on shift. It's not affiliated with the real San Diego Police Department, just borrowing the name and look for a bit of realism.
 
 ## Status
 
-Phase one. Pages are static HTML and CSS for now. Logins, the database, and search are not wired up yet, that comes in phase two.
+Phase two. The front end is wired to a real PHP and MySQL backend: login, session-based access control, and most pages are fully live. This is a proof of concept demonstrating the course's front end and back end techniques together, not a complete or polished MDT. See `docs/PHASE_II_NOTES.md` for what's implemented versus what's designed but not built.
 
 ## Pages so far
 
-- `login.html`, the entry screen
-- `dashboard.html`, the main MDT view with quick stats
-- `lookup.html`, search by record type
-- `roster.html`, a static list of officers on duty
-- `citations.html`, `arrests.html`, and `incidents.html`, placeholders for now
+- `login.html`, real authentication against the database, session-based
+- `dashboard.html`, live stats and active BOLOs, pulled via AJAX
+- `lookup.html`, live search for individuals and incident reports, other categories visible but disabled
+- `incidents.html`, list and file incident reports, validated client and server side
+- `bolos.html`, list and file BOLOs, validated client and server side
+- `roster.html`, live officer list, auto-refreshing
+- `citations.html`, not yet built; the backend endpoint exists and works, see [PHASE_II_NOTES](./PHASE_II_NOTES.md) for details
+
+## Setup
+
+Needs XAMPP (or an equivalent Apache + PHP + MySQL stack) running locally. Create a database, then import `database/schema.sql` followed by `database/seed.sql` through phpMyAdmin.
 
 ## Docs
 
-More detail on how this is put together lives in [ARCHITECTURE.md](ARCHITECTURE.md) and [CODE_STANDARD.md](docs/CODE_STANDARD.md), if you're curious or picking this up later.
+More detail lives in `docs/ARCHITECTURE.md`, `docs/CODE_STANDARD.md`, and `docs/PHASE_II_NOTES.md`, if you're curious or picking this up later.

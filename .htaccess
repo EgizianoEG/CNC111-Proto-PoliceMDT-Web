@@ -1,3 +1,13 @@
+# RewriteEngine On
+# RewriteRule ^login/?$ src/login/login.html [L]
+# RewriteRule ^dashboard/?$ src/dashboard/dashboard.html [L]
+# RewriteRule ^lookup/?$ src/lookup/lookup.html [L]
+# RewriteRule ^citations/?$ src/citations/citations.html [L]
+# RewriteRule ^incidents/?$ src/incidents/incidents.html [L]
+# RewriteRule ^bolos/?$ src/bolos/bolos.html [L]
+# RewriteRule ^roster/?$ src/roster/roster.html [L]
+
 ErrorDocument 404 /sdpd-mdt/errors/404.html
 ErrorDocument 401 /sdpd-mdt/errors/401.html
+
 Options -Indexes
