@@ -1,0 +1,156 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="San Diego Police Department Mobile Data Terminal (MDT) Demo"
+    />
+
+    <link rel="manifest" href="../../assets/data/site.webmanifest" />
+    <link rel="icon" href="../../assets/images/favicon/favicon.ico" sizes="any" />
+
+    <title>SDPD &mdash; BOLOs</title>
+    <link rel="stylesheet" type="text/css" href="../../assets/styles/base.css" />
+    <link rel="stylesheet" type="text/css" href="../../assets/styles/shell.css" />
+    <link rel="stylesheet" type="text/css" href="../../assets/styles/bolos.css" />
+    <script type="module" src="bolos.js"></script>
+  </head>
+  <body>
+    <div class="mdt-shell">
+      <header class="topbar prevent-select">
+        <div class="topbar__brand">
+          <div class="badge-icon badge-icon--sm" aria-hidden="true">
+            <img class="badge-icon__img" src="../../assets/images/sdpd-logo.png" alt="SDPD Logo" />
+          </div>
+          <span class="topbar__title">SDPD &mdash; MDT</span>
+        </div>
+
+        <div class="topbar__status">
+          <span class="topbar__officer"></span>
+          <span class="topbar__shift"></span>
+          <a href="../login/login.html" class="btn btn--ghost">Log Out</a>
+        </div>
+      </header>
+
+      <div class="mdt-body">
+        <nav class="sidebar" aria-label="MDT sections">
+          <ul class="sidebar__list">
+            <li><a href="../dashboard/dashboard.html" class="sidebar__link">Dashboard</a></li>
+            <li><a href="../lookup/lookup.html" class="sidebar__link">Lookup</a></li>
+            <li><a href="../citations/citations.html" class="sidebar__link">Citations</a></li>
+            <li><a href="../incidents/incidents.html" class="sidebar__link">Incidents</a></li>
+            <li>
+              <a href="javascript:void(0)" class="sidebar__link" style="cursor: default">Arrests</a>
+            </li>
+            <li><a href="./bolos.html" class="sidebar__link sidebar__link--active">BOLOs</a></li>
+            <li><a href="../roster/roster.html" class="sidebar__link">Roster</a></li>
+          </ul>
+        </nav>
+
+        <main class="content">
+          <section class="page-heading">
+            <h1>BOLOs</h1>
+            <p class="page-heading__subtitle">
+              Be On the Lookout for persons and vehicles of interest.
+            </p>
+          </section>
+
+          <section class="bolo-form-panel" aria-label="File a new BOLO">
+            <h2 class="section__title">File a New BOLO</h2>
+            <form id="bolo-form" class="bolo-form">
+              <div class="form-row">
+                <div class="form-field">
+                  <label for="subject-name">Subject Name</label>
+                  <input
+                    type="text"
+                    id="subject-name"
+                    name="subject-name"
+                    placeholder="e.g. John Doe"
+                    minlength="3"
+                    maxlength="86"
+                  />
+                </div>
+
+                <div class="form-field">
+                  <label for="plate-number">Plate Number</label>
+                  <input
+                    type="text"
+                    id="plate-number"
+                    name="plate-number"
+                    placeholder="e.g. 7XYZ123"
+                    pattern="[A-Z0-9]{4,10}"
+                    title="Please enter a valid plate number (4-10 alphanumeric characters)."
+                  />
+                </div>
+              </div>
+
+              <div class="form-field">
+                <label for="vehicle-description">Vehicle Description</label>
+                <input
+                  type="text"
+                  id="vehicle-description"
+                  name="vehicle-description"
+                  placeholder="e.g. Black sedan, tinted windows"
+                  minlength="3"
+                  maxlength="524"
+                  autocorrect="on"
+                />
+              </div>
+
+              <div class="form-field">
+                <label for="reason">Reason</label>
+                <input
+                  type="text"
+                  id="reason"
+                  name="reason"
+                  placeholder="Why is this BOLO being issued?"
+                  required
+                  minlength="3"
+                  maxlength="524"
+                  autocorrect="on"
+                />
+              </div>
+
+              <div class="form-field form-field--select">
+                <label for="priority">Priority</label>
+                <select id="priority" name="priority">
+                  <option value="low">Low</option>
+                  <option value="medium" selected>Medium</option>
+                  <option value="high">High</option>
+                </select>
+              </div>
+
+              <button type="submit" id="bolo-submit-button" class="btn btn--primary">
+                File BOLO
+              </button>
+            </form>
+          </section>
+
+          <section class="bolo-list-panel" aria-label="Active BOLOs">
+            <h2 class="section__title">Active BOLOs</h2>
+            <table id="bolos-table" class="data-table">
+              <thead class="data-table__head">
+                <tr>
+                  <th scope="col">BOLO #</th>
+                  <th scope="col">Plate</th>
+                  <th scope="col">Subject / Vehicle</th>
+                  <th scope="col">Reason</th>
+                  <th scope="col">Priority</th>
+                  <th scope="col">Issued</th>
+                  <th scope="col">Officer</th>
+                </tr>
+              </thead>
+              <tbody id="bolos-table-body" class="data-table__body">
+                <tr>
+                  <td colspan="7">Loading active BOLOs&hellip;</td>
+                </tr>
+              </tbody>
+            </table>
+          </section>
+        </main>
+      </div>
+    </div>
+  </body>
+</html>
