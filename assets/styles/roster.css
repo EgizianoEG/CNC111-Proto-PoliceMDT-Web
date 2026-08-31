@@ -56,6 +56,10 @@
   background-color: #9aa3ad;
 }
 
+.status-dot--break {
+  background-color: #b98600;
+}
+
 @media (max-width: 700px) {
   .roster-table {
     display: block;

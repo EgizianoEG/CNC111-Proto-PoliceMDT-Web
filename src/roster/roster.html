@@ -15,6 +15,8 @@
     <link rel="stylesheet" type="text/css" href="../../assets/styles/base.css" />
     <link rel="stylesheet" type="text/css" href="../../assets/styles/shell.css" />
     <link rel="stylesheet" type="text/css" href="../../assets/styles/roster.css" />
+
+    <script type="module" src="./roster.js"></script>
   </head>
   <body>
     <div class="mdt-shell">
@@ -27,8 +29,8 @@
         </div>
 
         <div class="topbar__status">
-          <span class="topbar__officer">Officer J. Ramirez &middot; #44710</span>
-          <span class="topbar__shift">On Duty</span>
+          <span class="topbar__officer"></span>
+          <span class="topbar__shift"></span>
           <a href="../login/login.html" class="btn btn--ghost">Log Out</a>
         </div>
       </header>
@@ -48,54 +50,22 @@
         <main class="content">
           <section class="page-heading">
             <h1>Roster</h1>
-            <p class="page-heading__subtitle">Recent activity...</p>
+            <p id="roster-subtitle" class="page-heading__subtitle">Recent shift activity...</p>
           </section>
 
-          <table class="roster-table">
-            <thead>
+          <table class="data-table">
+            <thead class="data-table__head">
               <tr>
-                <th>Badge</th>
+                <th>Badge #</th>
                 <th>Name</th>
                 <th>Rank</th>
                 <th>Division</th>
                 <th>Status</th>
               </tr>
             </thead>
-            <tbody>
+            <tbody id="roster-table-body" class="data-table__body">
               <tr>
-                <td>44710</td>
-                <td>J. Ramirez</td>
-                <td>Officer</td>
-                <td>Patrol</td>
-                <td><span class="status-dot status-dot--on"></span>On Duty</td>
-              </tr>
-              <tr>
-                <td>33900</td>
-                <td>K. Delgado</td>
-                <td>Sergeant</td>
-                <td>Traffic</td>
-                <td><span class="status-dot status-dot--on"></span>On Duty</td>
-              </tr>
-              <tr>
-                <td>51220</td>
-                <td>M. Ahn</td>
-                <td>Detective</td>
-                <td>Detective Bureau</td>
-                <td><span class="status-dot status-dot--off"></span>Off Duty</td>
-              </tr>
-              <tr>
-                <td>20870</td>
-                <td>R. Whitfield</td>
-                <td>Officer</td>
-                <td>Patrol</td>
-                <td><span class="status-dot status-dot--on"></span>On Duty</td>
-              </tr>
-              <tr>
-                <td>66540</td>
-                <td>T. Nguyen</td>
-                <td>Officer</td>
-                <td>Traffic</td>
-                <td><span class="status-dot status-dot--off"></span>Off Duty</td>
+                <td colspan="5">Loading roster&hellip;</td>
               </tr>
             </tbody>
           </table>
